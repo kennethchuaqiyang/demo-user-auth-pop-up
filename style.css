@@ -1,0 +1,189 @@
+:root {
+  --ink: #1c2128;
+  --paper: #f4f5f7;
+  --card: #ffffff;
+  --line: #d8dbe0;
+  --teal: #0d7d73;
+  --teal-dark: #08544d;
+  --purple: #5b3a9e;
+  --error: #b3261e;
+  --muted: #5f6672;
+  font-size: 16px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, "Segoe UI", system-ui, Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+/* ---------- Page behind the popup ---------- */
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.page h1 {
+  font-size: 1.6rem;
+  margin: 0 0 8px;
+}
+
+.page p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.signin-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--teal-dark);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  padding: 0;
+}
+
+.demo-note {
+  margin-top: 32px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* ---------- Popup overlay ---------- */
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 33, 40, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.popup-overlay.hidden { display: none; }
+
+.popup-card {
+  position: relative;
+  background: var(--card);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 360px;
+  padding: 28px 28px 24px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.popup-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.popup-close:hover { border-color: var(--error); color: var(--error); }
+
+.popup-card h2 {
+  margin: 0 24px 16px 0;
+  font-size: 1.2rem;
+}
+
+/* ---------- Form ---------- */
+
+.field {
+  margin-bottom: 14px;
+}
+
+.field label {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: var(--paper);
+}
+
+.field input:focus {
+  outline: 2px solid var(--teal);
+  outline-offset: 1px;
+}
+
+#signinError {
+  margin: 4px 0 14px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: #fbeaea;
+  border: 1px solid var(--error);
+  color: var(--error);
+  font-size: 0.85rem;
+  display: none;
+}
+
+#signinError.show { display: block; }
+
+.button-row {
+  display: flex;
+  gap: 8px;
+}
+
+.button-row button {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button.primary {
+  border: none;
+  background: var(--teal);
+  color: #fff;
+}
+
+button.primary:hover { background: var(--teal-dark); }
+
+button.secondary {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--muted);
+}
+
+button.secondary:hover { border-color: var(--muted); }
+
+/* ---------- Hello World success state ---------- */
+
+.hello-world {
+  text-align: center;
+  padding: 24px 0 8px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--purple);
+}
+
+.hidden { display: none; }

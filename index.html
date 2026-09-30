@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign-In Popup — Demo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <h1>Demo Site</h1>
+    <p>This is a placeholder page behind the sign-in popup - there's nothing
+       else to see here for this demo.</p>
+    <button type="button" class="signin-link" id="openSignin" data-testid="signin-link">Sign in</button>
+
+    <div class="demo-note">
+      Demo data (for automation testing only): one hardcoded account,
+      username <code>demo</code> / password <code>Demo@123</code>. There is
+      no real backend or session - closing the popup after reaching
+      "Hello World!" and reopening it via Sign in always starts a blank form.
+    </div>
+  </div>
+
+  <div class="popup-overlay hidden" id="popupOverlay" data-testid="popup-overlay">
+    <div class="popup-card" data-testid="signin-popup">
+      <button type="button" class="popup-close" id="popupClose" data-testid="popup-close-button" aria-label="Close">✕</button>
+
+      <div id="signinForm" data-testid="signin-form">
+        <h2>Sign in</h2>
+
+        <div class="field">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" data-testid="username-input" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" data-testid="password-input" autocomplete="off">
+        </div>
+
+        <div id="signinError" data-testid="signin-error-message"></div>
+
+        <div class="button-row">
+          <button type="button" class="primary" id="signinButton" data-testid="signin-button">Sign in</button>
+          <button type="button" class="secondary" id="cancelButton" data-testid="cancel-button">Cancel</button>
+        </div>
+      </div>
+
+      <div id="helloWorld" class="hello-world hidden" data-testid="hello-world-message">Hello World!</div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
